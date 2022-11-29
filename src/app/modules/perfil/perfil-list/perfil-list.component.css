@@ -1,0 +1,57 @@
+
+.lado-a {
+    float: left;
+    background-color: green;
+}
+.info-basicas {
+    position:absolute;
+    display: inline-block;
+    width: 320px;
+    margin-left: 20px;
+    font-size: 16px;
+    overflow-wrap: break-word;
+}
+
+
+.conteudo-perfil {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content:first baseline;
+    background-color: gray; 
+}
+
+
+/*Aqui vamos por a foto da bio*/
+.conteudo-perfil > div {
+    width: 500px;
+    margin: 10px;
+    padding: 10px;
+    background-color: antiquewhite;
+}
+
+.texto-box1 {
+    margin-top: 160px;
+    padding: 20px;
+    background-color: red;
+    overflow-wrap: break-word;
+}
+
+
+@media screen and (max-width: 500px) {
+    .conteudo-perfil > div {
+      width: 350px;
+      padding: 10px;
+      margin: 15px;
+    }
+
+    .info-basicas {
+        margin-left: 20px;
+        float: left;
+        font-size: 12px;
+    }
+    .texto-box1 {
+        font-size: 14px;
+    }
+  
+}

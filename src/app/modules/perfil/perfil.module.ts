@@ -17,6 +17,11 @@ import { PerfilFormComponent } from './perfil-form/perfil-form.component';
   imports: [
     CommonModule,
     SharedModule
+  ],
+  exports: [
+    PerfilFormComponent,
+    PerfilListComponent,
+    PerfilFotoComponent,
   ]
 })
 export class PerfilModule { }

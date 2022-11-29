@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'myb-perfil-foto',
@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./perfil-foto.component.css']
 })
 export class PerfilFotoComponent {
+  @Input() imagem = '';
 
+  constructor() {}
+
+  ngOnInit(): void {}
 }
