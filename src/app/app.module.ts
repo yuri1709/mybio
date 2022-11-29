@@ -5,6 +5,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PerfilModule } from './modules/perfil/perfil.module';
 
+import { provideFirebaseApp, getApp, initializeApp } from '@angular/fire/app';
+import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+import { firebaseConfig } from 'src/environments/enviroment';
+
+
 @NgModule({
   declarations: [
     AppComponent
@@ -12,7 +17,9 @@ import { PerfilModule } from './modules/perfil/perfil.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    PerfilModule
+    PerfilModule, 
+    provideFirebaseApp(() => initializeApp(firebaseConfig)),
+    provideFirestore(() => getFirestore()),
   ],
   providers: [],
   bootstrap: [AppComponent]

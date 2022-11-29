@@ -33,7 +33,9 @@ export class PerfilListComponent {
       this.http.get<PessoaInfo[]>('http://127.0.0.1:3000/perfil/get')
         .subscribe(resultado => {
           this.fotos = resultado;
-          console.log("perfil:" + this.fotos);
+
+          console.log(resultado);
+          //console.log("perfil:" + this.fotos);
         })
    }
 } 

@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component,  OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
@@ -8,9 +9,10 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class PerfilFormComponent {
   
+
   formulario!: FormGroup
 
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(private formBuilder: FormBuilder, private http: HttpClient) {}
 
   ngOnInit(): void {
     this.formulario = this.formBuilder.group({
@@ -21,8 +23,9 @@ export class PerfilFormComponent {
     })
   }
 
-  cadastrar(form: any) {
-      console.log(form.value);
+  cadastrar(form: any) {      
+    console.log(form.value);
+      this.http.post<any>("http://localhost:3000/perfil/add", form.value)
   }
 }
 
