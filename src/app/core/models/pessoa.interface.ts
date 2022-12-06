@@ -1,11 +1,8 @@
 export interface PessoaInfo {
-    
     imgUrl: string;
     nome: string;
     sobre: string;
-    idPessoa: number;
+    idPessoa?: number;
     contato: string;
-    estado: string;
-    
-    
+    estado: string;     
 }
