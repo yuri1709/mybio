@@ -6,8 +6,11 @@ import { AppComponent } from './app.component';
 import { PerfilModule } from './modules/perfil/perfil.module';
 
 import { provideFirebaseApp, getApp, initializeApp } from '@angular/fire/app';
-import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+//import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+
 import { firebaseConfig } from 'src/environments/enviroment';
+import { provideDatabase, getDatabase} from "@angular/fire/database"
+import { CoreModule } from './core/core.module';
 
 
 @NgModule({
@@ -15,11 +18,12 @@ import { firebaseConfig } from 'src/environments/enviroment';
     AppComponent
   ],
   imports: [
+    CoreModule,
     BrowserModule,
     AppRoutingModule,
     PerfilModule, 
     provideFirebaseApp(() => initializeApp(firebaseConfig)),
-    provideFirestore(() => getFirestore()),
+    provideDatabase(() => getDatabase()),
   ],
   providers: [],
   bootstrap: [AppComponent]

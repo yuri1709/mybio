@@ -1,7 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { Component,  OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { RealtimeService } from '../service/realtime.service';
+import {Database, set, ref, update} from "@angular/fire/database"
+import { PessoaInfo } from 'src/app/core/models/pessoa.interface';
+import { ServerJsonService } from '../service/server-json.service';
 @Component({
   selector: 'myb-perfil-form',
   templateUrl: './perfil-form.component.html',
@@ -12,21 +16,30 @@ export class PerfilFormComponent {
 
   formulario!: FormGroup
 
-  constructor(private formBuilder: FormBuilder, private http: HttpClient) {}
+  constructor(private formBuilder: FormBuilder,
+    private jsonService: ServerJsonService
+    ){}
 
   ngOnInit(): void {
     this.formulario = this.formBuilder.group({
       nome: ['',[Validators.required]],
       estado: ['',[Validators.required]],
       contato:  ['',[Validators.required]],
-      sobre:  ['',[Validators.required]]
+      sobre:  ['',[Validators.required]],
+      idPessoa:  ['',[Validators.required]],
+      imgUrl:  ['',[Validators.required]],
+      
     })
   }
+  //cadastrar do realTime database
+  // cadastrar(form: any) {      
+  //   this.realTimeDb.addPerfil(form.value)
+  // }
 
-  cadastrar(form: any) {      
-    console.log(form.value);
-      this.http.post<any>("http://localhost:3000/perfil/add", form.value)
+  cadastrar(form: any) {
+      this.jsonService.setData(form.value)
   }
+
 }
 
 
