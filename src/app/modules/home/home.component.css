@@ -1,0 +1,7 @@
+.container {
+    padding-bottom: 200px;
+}
+
+.container > h2 {
+    margin-top: 50px;
+}

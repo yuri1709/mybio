@@ -1,5 +1,4 @@
 import { HttpClient, HttpHeaders } from "@angular/common/http";
-import { createInjectableType } from "@angular/compiler";
 import { Injectable } from "@angular/core";
 import { PessoaInfo } from "src/app/core/models/pessoa.interface";
 
@@ -26,5 +25,5 @@ export class ServerJsonService {
 
     delData(id: number) {
         return this.http.delete(this.API + id).subscribe();
-    }
+    }   
 }

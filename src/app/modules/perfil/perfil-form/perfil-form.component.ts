@@ -1,11 +1,7 @@
-import { HttpClient } from '@angular/common/http';
-import { Component,  OnInit } from '@angular/core';
-
+import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { RealtimeService } from '../service/realtime.service';
-import {Database, set, ref, update} from "@angular/fire/database"
-import { PessoaInfo } from 'src/app/core/models/pessoa.interface';
 import { ServerJsonService } from '../service/server-json.service';
+
 @Component({
   selector: 'myb-perfil-form',
   templateUrl: './perfil-form.component.html',
@@ -24,7 +20,7 @@ export class PerfilFormComponent {
     this.formulario = this.formBuilder.group({
       nome: ['',[Validators.required]],
       sobrenome: ['',[Validators.required]],
-      email: ['',[Validators.required]],
+      email: ['',[Validators.required,]],
       telefone: ['',[Validators.required]],
       estado: ['',[Validators.required]],
       sobre:  ['',[Validators.required]],
@@ -36,6 +32,10 @@ export class PerfilFormComponent {
   // cadastrar(form: any) {      
   //   this.realTimeDb.addPerfil(form.value)
   // }
+
+  avisarCadastro() {
+    window.alert("Cadastrado com sucesso!");
+  }
 
   cadastrar(form: any) {
       this.jsonService.setData(form.value)

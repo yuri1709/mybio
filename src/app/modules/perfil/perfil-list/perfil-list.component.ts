@@ -26,7 +26,18 @@ export class PerfilListComponent  {
    }
 
    deletarDadosBio(id: number) {
-    this.jsonService.delData(id)
+    try{
+      this.jsonService.delData(id)
+    } 
+    catch{
+      window.alert("Erro ao deletar o card do perfil");
+    }
+    finally{
+      window.alert("Card do perdil deletado com sucesso!");
+      location.reload();
+    }
+    
+
    }
 } 
   

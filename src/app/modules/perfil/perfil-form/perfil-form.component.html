@@ -1,11 +1,5 @@
 <header>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('select');
-    var instances = M.FormSelect.init(elems, options);
-  });
-  </script>
 </header>
 
 <div class="container" style="margin-top: 100px">
@@ -14,16 +8,25 @@
       <div class="row">
         <div class="input-field col s6">
           <input placeholder="" id="nome" name="nome" type="text" class="form-control" formControlName="nome" required>
-          <label for="nome">Nome</label>
-        </div>
+          <div  *ngIf="formulario.get('nome')?.errors"   >
+            <p style="color: red">*Campo obrigatório</p>
+          </div>          
+          <label for="nome">Nome</label>          
+        </div>        
         <div class="input-field col s6">
           <input placeholder="" id="sobrenome" name="nome" type="text" class="form-control" formControlName="sobrenome" required>
+          <div  *ngIf="formulario.get('sobrenome')?.errors"   >
+            <p style="color: red">*Campo obrigatório</p>
+          </div>
           <label for="sobrenome">Sobrenome</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s6">
           <input placeholder="" id="imgUrl" name="imgUrl" type="text" class="form-control" formControlName="imgUrl" required>
+          <div  *ngIf="formulario.get('imgUrl')?.errors"   >
+            <p style="color: red">*Campo obrigatório</p>
+          </div>
           <label for="imgUrl">Link da sua foto de perfil</label>
         </div>
       </div>
@@ -31,11 +34,17 @@
         <div class="input-field col s6">
           <i class="material-icons prefix ">email</i>
           <input id="email" name="email" type="email" class="form-control" formControlName="email" required>
+          <div  *ngIf="formulario.get('email')?.errors"   >
+            <p style="color: red">*Campo obrigatório</p>
+          </div>
           <label for="icon_prefix">Email</label>
         </div>
         <div class="input-field col s6">
           <i class="material-icons prefix">phone</i>
-          <input id="telefone" name="telefone" type="number" class="form-control" formControlName="telefone" required>
+          <input id="telefone" name="telefone" type="number" class="form-control" formControlName="telefone" required >
+          <div  *ngIf="formulario.get('telefone')?.errors"   >
+            <p style="color: red">*Campo obrigatório</p>
+          </div>                  
           <label for="telefone">Telefone</label>
         </div>
       </div>
@@ -71,15 +80,21 @@
         <option value="TO">Tocantins</option>
         <option value="EX">Estrangeiro</option>
       </select>
+      <div  *ngIf="formulario.get('estado')?.errors"   >
+        <p style="color: red">*Campo obrigatório</p>
+      </div>
     
       <div class="row">
         <div class="input-field col s12">
           <textarea id="sobre" name="sobre" class="materialize-textarea" formControlName="sobre" required></textarea>
+          <div  *ngIf="formulario.get('sobre')?.errors"   >
+            <p style="color: red">*Campo obrigatório</p>
+          </div>
           <label for="textarea1">Escreva um pouco sobre você...</label>
         </div>
       </div>
       <br>
-      <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+      <button (click)="avisarCadastro()" [disabled]="formulario.invalid" class="btn waves-effect waves-light" type="submit" name="action">Submit
         <i class="material-icons right">send</i>
       </button>
     </form>

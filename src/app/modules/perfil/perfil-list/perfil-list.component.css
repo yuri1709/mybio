@@ -1,3 +1,6 @@
+.pessoasTitle {
+    margin-top: 50px;
+}
 
 .lado-a {
     float: left;
@@ -20,6 +23,7 @@
 
 .conteudo-perfil {
     margin-top: 100px;
+    margin-bottom: 150px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
