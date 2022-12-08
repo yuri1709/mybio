@@ -7,9 +7,10 @@ import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+   //HeaderComponent //Declarando o header aqui.
+  ],
   exports: [
-    BrowserModule,
     CommonModule,
     HttpClientModule,
     FormsModule,

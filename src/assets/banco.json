@@ -1,13 +1,24 @@
 {
   "perfis": [
     {
-      "nome": "yuri1709",
-      "estado": "Rj",
-      "contato": "219921912219",
-      "sobre": "Curto ouvir nirvana",
-      "idPessoa": "21",
-      "imgUrl": "https://i.imgur.com/ZiQg1nE.jpeg",
+      "nome": "Yuri",
+      "sobrenome": "Conder",
+      "email": "yurisabbagh@hotmail.com",
+      "telefone": 21999978023,
+      "estado": "RJ",
+      "sobre": "Estou na reta final do curso técnico de informática no senac e cá estou a procura de uma oportunidade para por em prática os meus conhecimentos.",
+      "imgUrl": "https://scontent.fsdu40-1.fna.fbcdn.net/v/t1.6435-9/175171315_4219519121403014_1066386559326254672_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeHTSnK6L2Y-bWM_4cjWAkOYkp5mPy_yWY-SnmY_L_JZj9fUxSC7e6niDW7NTAEo1XcsMkevZyJ2vQCI6yC4DDhl&_nc_ohc=m01opDtRUn0AX8p4JGo&tn=qF_oyZY0x4olGzlL&_nc_ht=scontent.fsdu40-1.fna&oh=00_AfDZfx9QDv_7g5XPEsn1Xfetf7N_qGaVUoZzRhOJxeHmwA&oe=63B8BA27",
       "id": 1
+    },
+    {
+      "nome": "Jéssica",
+      "sobrenome": "Gonçalves",
+      "email": "jessica@hotmail.com",
+      "telefone": 2198871216,
+      "estado": "SC",
+      "sobre": "Sou desenvolvedora front-end, curto sair nas horas vagas e sou mamãe de dois cachorros: tiki e teka",
+      "imgUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXeIb_jbk7FxeVdmnW-jYwzGFD74DaxPTdLQ&usqp=CAU",
+      "id": 2
     }
   ]
 }
