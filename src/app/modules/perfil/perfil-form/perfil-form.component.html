@@ -1,47 +1,86 @@
+<header>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('select');
+    var instances = M.FormSelect.init(elems, options);
+  });
+  </script>
+</header>
+
 <div class="container" style="margin-top: 100px">
-    <h2 class="text-center">Formulário de Cadastro</h2>
+    <h3 class="padding 200px">Formulário de Cadastro</h3>
+    <form [formGroup]="formulario" (ngSubmit)="cadastrar(formulario)" class="col-12" >
+      <div class="row">
+        <div class="input-field col s6">
+          <input placeholder="" id="nome" name="nome" type="text" class="form-control" formControlName="nome" required>
+          <label for="nome">Nome</label>
+        </div>
+        <div class="input-field col s6">
+          <input placeholder="" id="sobrenome" name="nome" type="text" class="form-control" formControlName="sobrenome" required>
+          <label for="sobrenome">Sobrenome</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s6">
+          <input placeholder="" id="imgUrl" name="imgUrl" type="text" class="form-control" formControlName="imgUrl" required>
+          <label for="imgUrl">Link da sua foto de perfil</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s6">
+          <i class="material-icons prefix ">email</i>
+          <input id="email" name="email" type="email" class="form-control" formControlName="email" required>
+          <label for="icon_prefix">Email</label>
+        </div>
+        <div class="input-field col s6">
+          <i class="material-icons prefix">phone</i>
+          <input id="telefone" name="telefone" type="number" class="form-control" formControlName="telefone" required>
+          <label for="telefone">Telefone</label>
+        </div>
+      </div>
+      <label style="font-size: 18px;">Estado</label>
+      <select class="browser-default col-4" id="estado" name="estado" formControlName="estado" required>
+        <option value="" disabled selected>Selecionar estado</option>
+        <option value="AC">Acre</option>
+        <option value="AL">Alagoas</option>
+        <option value="AP">Amapá</option>
+        <option value="AM">Amazonas</option>
+        <option value="BA">Bahia</option>
+        <option value="CE">Ceará</option>
+        <option value="DF">Distrito Federal</option>
+        <option value="ES">Espírito Santo</option>
+        <option value="GO">Goiás</option>
+        <option value="MA">Maranhão</option>
+        <option value="MT">Mato Grosso</option>
+        <option value="MS">Mato Grosso do Sul</option>
+        <option value="MG">Minas Gerais</option>
+        <option value="PA">Pará</option>
+        <option value="PB">Paraíba</option>
+        <option value="PR">Paraná</option>
+        <option value="PE">Pernambuco</option>
+        <option value="PI">Piauí</option>
+        <option value="RJ">Rio de Janeiro</option>
+        <option value="RN">Rio Grande do Norte</option>
+        <option value="RS">Rio Grande do Sul</option>
+        <option value="RO">Rondônia</option>
+        <option value="RR">Roraima</option>
+        <option value="SC">Santa Catarina</option>
+        <option value="SP">São Paulo</option>
+        <option value="SE">Sergipe</option>
+        <option value="TO">Tocantins</option>
+        <option value="EX">Estrangeiro</option>
+      </select>
     
-    <form [formGroup]="formulario" (ngSubmit)="cadastrar(formulario)">
-        <div class="form-group">
-          <label>Id</label>
-          <input type="text" class="form-control" placeholder="opcional" name="idPessoa" formControlName="idPessoa">
+      <div class="row">
+        <div class="input-field col s12">
+          <textarea id="sobre" name="sobre" class="materialize-textarea" formControlName="sobre" required></textarea>
+          <label for="textarea1">Escreva um pouco sobre você...</label>
         </div>
-        <div class="form-group">
-          <label>Link Imagem</label>
-          <input type="text" class="form-control" placeholder="" name="imgUrl" formControlName="imgUrl">
-          <div  *ngIf="formulario.get('imgUrl')?.errors"   >
-                <p style="color: red">*Link do endereço da imagem</p>
-          </div>
-        </div>      
-        <div class="form-group">
-          <label>Nome Completo</label>
-          <input type="text" class="form-control" placeholder="" name="nome" formControlName="nome">
-          <div  *ngIf="formulario.get('nome')?.errors"   >
-                <p style="color: red">*Nome completo por favor</p>
-          </div>
-        </div>
-        <div class="form-group">
-          <label>Unidade Federativa</label>
-          <input type="text" class="form-control" placeholder="" name="estado" formControlName="estado">
-          <div  *ngIf="formulario.get('estado')?.errors"   >
-            <p style="color: red;">*Campo Obrigatório!</p>
-          </div>
-        </div>
-        <div class="form-group">
-            <label>Contato:</label>
-            <input type="text" class="form-control" placeholder="" name="contato" formControlName="contato">
-            <div  *ngIf="formulario.get('contato')?.errors"   >
-              <p style="color: red;">*Campo Obrigatório!</p>
-            </div>
-         </div>
-         <div class="form-group">
-            <label>Sobre:</label>
-            <input type="text" class="form-control" placeholder="conte-me um pouco sobre você..." name="sobre" formControlName="sobre">
-            <div  *ngIf="formulario.get('contato')?.errors"   >
-              <p style="color: red;">*Campo Obrigatório!</p>
-            </div>
-          </div>
-       
-        <button type="submit" class="btn btn-primary" [disabled]="formulario.invalid">Submit</button>
-      </form>
+      </div>
+      <br>
+      <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+        <i class="material-icons right">send</i>
+      </button>
+    </form>
 </div>

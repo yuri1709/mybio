@@ -5,7 +5,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { PerfilListComponent } from './perfil-list/perfil-list.component';
 import { PerfilFotoComponent } from './perfil-foto/perfil-foto.component';
 import { PerfilFormComponent } from './perfil-form/perfil-form.component';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { PerfisRoutingModule } from './perfil-routing.module';
 
 
 
@@ -18,6 +18,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
   imports: [
     CommonModule,
     SharedModule,
+    PerfisRoutingModule
   ],
   exports: [
     PerfilFormComponent,

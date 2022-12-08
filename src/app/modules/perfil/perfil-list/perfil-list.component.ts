@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { PessoaInfo } from 'src/app/core/models/pessoa.interface';
 
@@ -11,7 +10,6 @@ import { ServerJsonService } from '../service/server-json.service';
 
 export class PerfilListComponent  {
 
- 
 
   perfis!: PessoaInfo[]; 
   

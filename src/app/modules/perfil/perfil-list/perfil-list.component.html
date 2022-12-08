@@ -1,18 +1,19 @@
-<div class="lista-perfil">
+<div class="lista-perfil container">
     <div class="conteudo-perfil justify-content-center">
         <!-- Fique esperto com esse ngFor quando voltarmos da conexão com o banco -->
         <div *ngFor="let perfil of perfis; ">    
-            <div class="container01">
+            <div class="container">
                 <div class="lado-a">
                     <myb-perfil-foto [imagem]=perfil.imgUrl></myb-perfil-foto>
                 </div>
                 <div class="info-basicas">
-                    <div class="row"><p><strong>Nome:</strong> {{perfil.nome}} </p><br></div>
-                    <div class="row"><p><strong>Estado:</strong> {{perfil.estado}}</p><br></div>
-                    <div class="row"><p><strong>Contato:</strong> {{perfil.contato}}</p></div>
+                    <div class="row"><p><strong>Nome:</strong> {{perfil.nome}} {{perfil.sobrenome}} </p></div>
+                    <div class="row"><p><strong>Estado:</strong> {{perfil.estado}}</p></div>
+                    <div class="row"><p><strong>Contato:</strong> {{perfil.telefone}}/{{perfil.email}}</p></div>
                 </div>
             </div>
             <div class="texto-box1">                
+                <hr>
                 <h6>Sobre mim:</h6>
                 <p>{{perfil.sobre}}</p>
             </div>

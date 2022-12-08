@@ -20,7 +20,7 @@ export class ServerJsonService {
         return this.http.get<PessoaInfo[]>(this.API);
     }
 
-    setData(valor: PessoaInfo) {
+    setData(valor: any) {
         return this.http.post(this.API, JSON.stringify(valor), this.httpOptions).subscribe();
     }
 }

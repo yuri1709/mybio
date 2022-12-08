@@ -12,14 +12,16 @@ export class RealtimeService {
     constructor (private database: Database){}
 
 
-    //its working
+    //its working (DESATIVADO)
     addPerfil(perfil: PessoaInfo) {
         set(ref(this.database, 'perfis/' + perfil.idPessoa ),{
             imgUrl: perfil.imgUrl, 
             nome: perfil.nome,
+            sobrenome: perfil.sobrenome,
             sobre: perfil.sobre,
             idPessoa: perfil.idPessoa,
-            contato: perfil.contato,
+            email: perfil.email,
+            telefone: perfil.telefone,
             estado: perfil.estado
         })
         return true

@@ -23,11 +23,12 @@ export class PerfilFormComponent {
   ngOnInit(): void {
     this.formulario = this.formBuilder.group({
       nome: ['',[Validators.required]],
+      sobrenome: ['',[Validators.required]],
+      email: ['',[Validators.required]],
+      telefone: ['',[Validators.required]],
       estado: ['',[Validators.required]],
-      contato:  ['',[Validators.required]],
       sobre:  ['',[Validators.required]],
-      idPessoa:  ['',[Validators.required]],
-      imgUrl:  ['',[Validators.required]],
+      imgUrl:  ['',[Validators.required]]
       
     })
   }

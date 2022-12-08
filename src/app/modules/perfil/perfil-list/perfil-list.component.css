@@ -1,7 +1,9 @@
 
 .lado-a {
     float: left;
+    border-style: groove;
     background-color: green;
+    border-color: white;
 }
 .info-basicas {
     position:absolute;
@@ -14,11 +16,12 @@
 
 
 .conteudo-perfil {
+    margin-top: 100px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content:first baseline;
-    background-color: gray; 
+    background-color: white; 
 }
 
 
@@ -27,19 +30,25 @@
     width: 500px;
     margin: 10px;
     padding: 10px;
-    background-color: antiquewhite;
+    background-color: #008B8B;
+    box-shadow: 3px 4px gainsboro;
+}
+
+.row {
+    overflow-wrap: break-word;
 }
 
 .texto-box1 {
     margin-top: 160px;
     padding: 20px;
-    background-color: red;
+    background-color: #008B8B;
     overflow-wrap: break-word;
 }
 
 
 @media screen and (max-width: 500px) {
     .conteudo-perfil > div {
+      margin-top: 5px;
       width: 350px;
       padding: 10px;
       margin: 15px;
