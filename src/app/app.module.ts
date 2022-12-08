@@ -13,6 +13,7 @@ import { provideDatabase, getDatabase} from "@angular/fire/database"
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
 import { HeaderModule } from './shared/header/header.module';
+import { FooterModule } from './shared/footer/footer.module';
 
 
 
@@ -27,6 +28,7 @@ import { HeaderModule } from './shared/header/header.module';
     PerfilModule, 
     SharedModule,
     HeaderModule, //Header Module precisa ser importado aqui, porque ele vai conter as rotas de cada página
+    FooterModule,
     provideFirebaseApp(() => initializeApp(firebaseConfig)),
     provideDatabase(() => getDatabase()),
   ],

@@ -14,7 +14,7 @@ export class ServerJsonService {
 
     constructor(private http: HttpClient) {}
 
-    readonly API = " http://localhost:3000/perfis";
+    readonly API = " http://localhost:3000/perfis/";
 
     getData() {
         return this.http.get<PessoaInfo[]>(this.API);
@@ -22,5 +22,9 @@ export class ServerJsonService {
 
     setData(valor: any) {
         return this.http.post(this.API, JSON.stringify(valor), this.httpOptions).subscribe();
+    }
+
+    delData(id: number) {
+        return this.http.delete(this.API + id).subscribe();
     }
 }

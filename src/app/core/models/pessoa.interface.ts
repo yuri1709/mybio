@@ -1,5 +1,5 @@
 export interface PessoaInfo {
-    idPessoa?: number;
+    id: number;
     imgUrl: string;
     nome: string;
     sobrenome: string;

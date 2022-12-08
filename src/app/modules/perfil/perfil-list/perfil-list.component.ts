@@ -24,6 +24,10 @@ export class PerfilListComponent  {
   pegarDadosBio() {
      this.jsonService.getData().subscribe(resultado => this.perfis = resultado);
    }
+
+   deletarDadosBio(id: number) {
+    this.jsonService.delData(id)
+   }
 } 
   
  

@@ -14,6 +14,9 @@
     overflow-wrap: break-word;
 }
 
+.excluir{
+    float:right
+}
 
 .conteudo-perfil {
     margin-top: 100px;

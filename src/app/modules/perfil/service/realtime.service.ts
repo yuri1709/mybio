@@ -14,12 +14,12 @@ export class RealtimeService {
 
     //its working (DESATIVADO)
     addPerfil(perfil: PessoaInfo) {
-        set(ref(this.database, 'perfis/' + perfil.idPessoa ),{
+        set(ref(this.database, 'perfis/' + perfil.id ),{
             imgUrl: perfil.imgUrl, 
             nome: perfil.nome,
             sobrenome: perfil.sobrenome,
             sobre: perfil.sobre,
-            idPessoa: perfil.idPessoa,
+            idPessoa: perfil.id,
             email: perfil.email,
             telefone: perfil.telefone,
             estado: perfil.estado
